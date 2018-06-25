@@ -91,7 +91,7 @@ var bar = foo();
     
 bar();      // this function is a return value.
 ```
-###3. 함수 객체의 기본 프로퍼티
+### 3. 함수 객체의 기본 프로퍼티
 
 자바스크립트는 함수도 객체이다.
 
