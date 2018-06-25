@@ -1,24 +1,26 @@
-function Person(name){
-    this.name = name;
+var value = "value1";
+
+function printFunc(func) {
+    var value = "value2";
+
+    function printValue() {
+        return value;
+    }
+
+    console.log(printValue());
 }
 
-console.log(Person.prototype.constructor);
+printFunc();
 
-// foo 객체 생성  
-var foo = new Person('foo');
-console.log(foo.country);
 
-// 디폴트 프로토타입 깨체 변경
-Person.prototype = {
-    country : 'Korea'
-};
+var value = "value1";
 
-console.log(Person.prototype.constructor);
+function printValue() {
+    return value;
+}
+function printFunc(func) {
+    var value = "value2";
+    console.log(func());
+}
 
-// bar 객체 생성
-var bar = new Person('bar');
-
-console.log(foo.country);
-console.log(bar.country);
-console.log(foo.constructor);
-console.log(bar.constructor);
+printFunc(printValue);
