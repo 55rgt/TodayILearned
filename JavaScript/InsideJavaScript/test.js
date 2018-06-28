@@ -1,26 +1,10 @@
-var value = "value1";
-
-function printFunc(func) {
-    var value = "value2";
-
-    function printValue() {
-        return value;
+function countSeconds(howMany) {
+    for (var i = 1; i <= howMany; i++) {
+        (function (currentI) {
+            setTimeout(function () {
+                console.log(currentI);
+            }, currentI * 1000);
+        }(i));
     }
-
-    console.log(printValue());
-}
-
-printFunc();
-
-
-var value = "value1";
-
-function printValue() {
-    return value;
-}
-function printFunc(func) {
-    var value = "value2";
-    console.log(func());
-}
-
-printFunc(printValue);
+};
+countSeconds(3);
