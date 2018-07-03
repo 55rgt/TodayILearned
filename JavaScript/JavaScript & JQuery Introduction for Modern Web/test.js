@@ -1,32 +1,6 @@
-function Rect(w, h) {
+var array = ['A', 'B', 'C', 'D'];
 
-    var width = w;
-    var height = h;
+var output = '';
+for (var i = 0; i < array.length; i++) output += i + ' : ' + array[i] + '\n';
 
-    this.getWidth = function() { return width; };
-
-    this.getHeight = function() { return height; };
-
-    this.setWidth = function(w){ width = w; };
-
-    this.setHeight = function(h) { height = h; }
-}
-
-Rect.prototype.getArea = function() {
-    return this.getHeight() * this.getWidth();
-};
-
-function Square(length){
-    this.base = Rect;
-    this.base(length, length);
-}
-
-Square.prototype = Rect.prototype;
-Square.prototype.constructor = Square;
-
-var rect = new Rect(5, 7);
-var square = new Square(5);
-
-console.log(square.constructor);
-
-alert(square instanceof Rect);
+alert(output);
