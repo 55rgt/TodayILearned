@@ -45,6 +45,31 @@ alert(output);
 
 ### 3. 정렬
 
-
+```javascript 1.8
+var array = [52, 273, 103, 32];
+array.sort(function (left, right) {
+    // 오름차순 정렬
+    return left - right;
+});
+    
+alert(array);
+```
 
 ### 4. 요소 제거
+
+```javascript 1.8
+Array.prototype.remove = function (index) {
+    this.splice(index, 1);
+};
+    
+
+var array = [52, 273, 103, 32, 274, 129];
+    
+for (var i = array.length; i >= 0; i--) {
+    if (array[i] > 100) array.remove(i);
+}
+    
+
+alert(array);
+```
+

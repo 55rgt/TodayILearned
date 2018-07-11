@@ -1,6 +1,8 @@
-var array = ['A', 'B', 'C', 'D'];
+var object = { name: 'Tom' };
 
-var output = '';
-for (var i = 0; i < array.length; i++) output += i + ' : ' + array[i] + '\n';
+Object.defineProperty(object, 'region', {
+    value: 'Seoul'
+});
 
-alert(output);
+alert(Object.keys(object));
+alert(Object.getOwnPropertyNames(object));
