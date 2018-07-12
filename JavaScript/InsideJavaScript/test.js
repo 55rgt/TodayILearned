@@ -8,13 +8,11 @@ function wrap(object, method, wrapper){
 }
 
 Function.prototype.original = function(value) {
-
     this.value = value;
     console.log("value : " + this.value);
 };
 
 var myWrap = wrap(Function.prototype, "original", function(orig_func, value) {
-
     this.value = 20;
     orig_func(value);
     console.log("wrapper value : " + this.value);

@@ -96,7 +96,7 @@ function parent(){
     var a = 100;
     var child = function(){
         console.log(a);
-    }
+    };
         
     return child;
 }
@@ -123,7 +123,7 @@ var self = function(){
     return function(){
         console.log('b');
     }
-}
+};
     
 /** 처음 self() 함수가 호출됐을 때는 'a'가 출력된다. 그리고 다시 self 함수 변수에 self() 함수 호출 리턴값으로 내보낸 함수가 저장된다. */        
 self = self();      // a
