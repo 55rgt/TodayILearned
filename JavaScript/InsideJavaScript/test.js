@@ -1,21 +1,17 @@
-function wrap(object, method, wrapper){
+var arr = ['bar', 'bas'];
+var obj2 = { 0: 'tom', name : 'foo', length : 0};
+var obj = { name : 'foo'};
 
-    var fn = object[method];
-    return object[method] = function(){
-        //return wrapper.apply(this, [ fn.bind(this) ].concat(
-        return wrapper.apply(this, [ fn ].concat(Array.prototype.slice.call(arguments)));
-    };
-}
+console.dir(obj);
+arr.push('baz');
+console.log(arr);
+Array.prototype.push.apply(obj2, ['baz', 'ab']);
+Array.prototype.push.apply(obj2, ['baz', 'ab']);
 
-Function.prototype.original = function(value) {
-    this.value = value;
-    console.log("value : " + this.value);
-};
+delete obj2.length;
 
-var myWrap = wrap(Function.prototype, "original", function(orig_func, value) {
-    this.value = 20;
-    orig_func(value);
-    console.log("wrapper value : " + this.value);
-});
+Array.prototype.push.apply(obj2, ['a', 'b']);
 
-var obj = new myWrap("hyeonsik");
+
+console.log(obj2);
+
