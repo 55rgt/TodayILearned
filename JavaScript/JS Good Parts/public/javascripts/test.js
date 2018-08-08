@@ -1,27 +1,20 @@
-var myObject = {
-    value: 0,
-    increment: function(inc) {
-        this.value += typeof inc === 'number' ? inc : 1;
-    },
-    getValue: function () {
-        return this.value;
-    }
-};
+var foo = function() {
+    var a = 3, b = 5;
 
-myObject.increment();
-console.log(myObject.value);        // 1
-myObject.increment(2);
-console.log(myObject.value);        // 3
+    console.log(a,b);       // 3, 5
 
-myObject.double = function() {
+    var bar = function() {
+        var b = 7, c = 11;
 
-    var that = this;
-    var helper = function() {
-        that.value *= 2;
+        console.log(a,b,c); // 3, 7, 11
+
+        a += b + c;
+        console.log(a,b,c); // 21, 7, 11
     };
 
-    helper();
+    bar();
+    console.log(a,b);   // 21, 5
+
 };
 
-myObject.double();
-console.log(myObject.getValue());
+foo();
