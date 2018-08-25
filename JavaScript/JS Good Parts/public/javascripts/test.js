@@ -1,15 +1,7 @@
-function scopeExam(){
-    scope = 20;
-    console.log("scope = " +scope);
-}
+var test = function (list) {
 
-function scopeExam2(){
-    console.log("scope = " + scope);
+    var i;
+
+    for(i = 0 ; i < list.length ; i+
+
 }
-scopeExam();
-scopeExam2();
-//실행결과
-/*
-scope=20
-scope=20
-*/
