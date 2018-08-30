@@ -1,7 +1,18 @@
-var test = function (list) {
+String.prototype.deEntity = function() {
 
-    var i;
+    var entity = {
+        quot: '"',
+        lt: '<',
+        gt: '>'
+    };
 
-    for(i = 0 ; i < list.length ; i+
+    return function() {
+        return this.replace(/&([^&;]+);/g, function(a,b) {
+            let r = entity[b];
+            return typeof r === 'string' ? r : a;
+        });
+    };
 
-}
+}();
+
+console.log('&lt;&quot;&gt;'.deEntity());
